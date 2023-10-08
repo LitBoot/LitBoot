@@ -4,18 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96543c26-555a-4964-b43b-53482065cf74" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/litBoot.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/litBoot/src/assets/testBG.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/litBoot/src/assets/testBG2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/litBoot/src/components/favoriteDock.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/litBoot/src/components/mainClock.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/litBoot/src/components/searchBar.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    <list default="true" id="96543c26-555a-4964-b43b-53482065cf74" name="Changes" comment="Init Commit">
+      <change afterPath="$PROJECT_DIR$/litBoot/src/assets/baiduIcon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/litBoot/src/assets/bingIcon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/litBoot/src/assets/googleIcon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/litBoot/src/js/searchEngine.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/litBoot/src/components/searchBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/litBoot/src/components/searchBar.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +22,7 @@
       <list>
         <option value="package.json" />
         <option value="Vue Composition API Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -102,12 +98,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1696792068097</updated>
-      <workItem from="1696792069141" duration="8314000" />
+      <workItem from="1696792069141" duration="12633000" />
     </task>
+    <task id="LOCAL-00001" summary="Init Commit">
+      <option name="closed" value="true" />
+      <created>1696800790132</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1696800790132</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Init Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Init Commit" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
