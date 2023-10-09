@@ -1,5 +1,5 @@
 <script setup>
-import {SearchOutlined} from '@ant-design/icons-vue'
+import {SearchOutlined, CloseCircleFilled} from '@ant-design/icons-vue'
 import {ref, computed} from "vue";
 import {returnGooglePattern, returnBaiduPattern, returnBingPattern} from '../js/searchEngine.js'
 
@@ -23,6 +23,7 @@ function openURL(url) {
     <div class="searchbarInputHolder">
       <SearchOutlined style="flex: 1"/>
       <input type="text" class="searchbarInput" placeholder="搜索任何东西" v-model="searchBarContent"/>
+      <CloseCircleFilled @click="searchBarContent = ''"/>
     </div>
     <div class="searchbarResultListHolder" v-if="isShowResultList">
       <div class="resultListItem" v-if="isShowQuickCalculate">计算结果：</div>

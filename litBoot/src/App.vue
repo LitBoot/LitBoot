@@ -3,17 +3,41 @@ import MainClock from "./components/mainClock.vue";
 import SearchBar from "./components/searchBar.vue";
 import FavoriteDock from "./components/favoriteDock.vue";
 import TopBar from "./components/topBar.vue";
+import {computed, ref} from "vue";
+import {getRandomWallpaper} from "./js/requests/wallpaper.js"
+
+const focusMode = ref(false)
+const bgAddress = ref("./assets/testBG2.png")
+
+const bgBrightness = computed(()=>{
+  if (focusMode.value === true) {
+    return 0.25
+  }
+  else {
+    return 0.7
+  }
+})
+
+function getRandomBgPhoto() {
+  getRandomWallpaper(1920).then((res)=>{
+    bgAddress.value = res.data.url
+  })
+}
+
+getRandomWallpaper()
+
+function applyFocusMode(status) {
+  console.log("Received the trigger: ", status)
+  focusMode.value = status
+}
 </script>
 
 <template>
   <div class="bgContainer"/>
-  <top-bar/>
+  <top-bar @trigger-focus-status="applyFocusMode"/>
   <div class="container">
-    <MainClock/>
-<!--    <div class="flipPageContainer">-->
-<!--      <search-bar/>-->
-<!--    </div>-->
-    <DCarousel class="flipPageContainer" :autoplay="false">
+    <MainClock :on-focus-mode="focusMode"/>
+    <DCarousel class="flipPageContainer" :autoplay="false" v-if="focusMode === false">
       <div class="carousel-item">
         <search-bar/>
       </div>
@@ -46,8 +70,9 @@ import TopBar from "./components/topBar.vue";
   background-image: url("./assets/testBG2.png");
   background-position: center center;
   background-size: cover;
-  filter: brightness(0.7);
+  filter: brightness(v-bind('bgBrightness'));
   z-index: 999;
+  transition: all 0.1s;
 }
 .flipPageContainer {
   width: 90%;

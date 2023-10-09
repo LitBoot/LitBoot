@@ -1,6 +1,7 @@
 {
   "name": "litBoot",
   "version": "1.0.0",
-  "dependencies": {
+  "devDependencies": {
+    "axios": "^1.5.1"
   }
 }

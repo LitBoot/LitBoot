@@ -7,6 +7,8 @@ const year = ref(1970)
 const month = ref(1)
 const day = ref(1)
 const weekday = ref("")
+const props = defineProps(['onFocusMode'])
+const isOnFocusMode = ref(props.onFocusMode)
 
 setInterval(getCurrentTime, 500)
 
@@ -47,6 +49,7 @@ getCurrentTime()
 <div class="clockContainer">
   <div class="main-time-display">{{hour}}:{{minute}}</div>
   <div class="main-date-display">{{year}}年{{month}}月{{day}}日 星期{{weekday}}</div>
+  <div v-if="props.onFocusMode">您当前处于专注模式！</div>
 </div>
 </template>
 
@@ -61,7 +64,7 @@ getCurrentTime()
   flex: 3;
 }
 .main-time-display {
-  font-size: 50px;
+  font-size: 60px;
   font-weight: bold;
   margin: 5px;
 }
