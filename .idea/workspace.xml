@@ -4,15 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96543c26-555a-4964-b43b-53482065cf74" name="Changes" comment="Init Commit">
-      <change afterPath="$PROJECT_DIR$/litBoot/src/assets/Focus.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/litBoot/src/js/requests/wallpaper.js" afterDir="false" />
+    <list default="true" id="96543c26-555a-4964-b43b-53482065cf74" name="Changes" comment="Wallpaper request&#10;Focus mode update">
+      <change afterPath="$PROJECT_DIR$/litBoot/src/UIComponent/divideBox.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/litBoot/src/UIComponent/favoriteBarIcon.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/litBoot/src/UIComponent/menuItem.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/litBoot/src/assets/vueIcon/icons.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/litBoot/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/litBoot/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/litBoot/src/components/favoriteDock.vue" beforeDir="false" afterPath="$PROJECT_DIR$/litBoot/src/components/favoriteDock.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/litBoot/src/components/mainClock.vue" beforeDir="false" afterPath="$PROJECT_DIR$/litBoot/src/components/mainClock.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/litBoot/src/components/searchBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/litBoot/src/components/searchBar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/litBoot/src/components/topBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/litBoot/src/components/topBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/litBoot/src/js/requests/wallpaper.js" beforeDir="false" afterPath="$PROJECT_DIR$/litBoot/src/js/requests/wallpaper.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +25,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package.json" />
-        <option value="Vue Composition API Component" />
         <option value="JavaScript File" />
+        <option value="Vue Composition API Component" />
       </list>
     </option>
   </component>
@@ -101,7 +103,10 @@
       <option name="presentableId" value="Default" />
       <updated>1696792068097</updated>
       <workItem from="1696792069141" duration="14997000" />
-      <workItem from="1696817321267" duration="2987000" />
+      <workItem from="1696817321267" duration="4464000" />
+      <workItem from="1696862323009" duration="332000" />
+      <workItem from="1696863013457" duration="3408000" />
+      <workItem from="1696946860850" duration="2775000" />
     </task>
     <task id="LOCAL-00001" summary="Init Commit">
       <option name="closed" value="true" />
@@ -119,7 +124,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696808881289</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Wallpaper request&#10;Focus mode update">
+      <option name="closed" value="true" />
+      <created>1696821882546</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1696821882546</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,7 +140,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Init Commit" />
+    <MESSAGE value="Wallpaper request&#10;Focus mode update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Wallpaper request&#10;Focus mode update" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>

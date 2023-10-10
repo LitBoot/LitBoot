@@ -19,7 +19,7 @@ function getCurrentTime() {
   console.log("Updating time...")
   // process date
   year.value = timeObject.getFullYear()
-  month.value = timeObject.getMonth()
+  month.value = timeObject.getMonth() + 1
   day.value = timeObject.getDate()
 
   // process day

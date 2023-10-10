@@ -5,26 +5,29 @@ import FavoriteDock from "./components/favoriteDock.vue";
 import TopBar from "./components/topBar.vue";
 import {computed, ref} from "vue";
 import {getRandomWallpaper} from "./js/requests/wallpaper.js"
+import DivideBox from "./UIComponent/divideBox.vue";
+import MenuItem from "./UIComponent/menuItem.vue";
 
 const focusMode = ref(false)
 const bgAddress = ref("./assets/testBG2.png")
+const displayWallpaperInfoDialog = ref(false)
 
 const bgBrightness = computed(()=>{
   if (focusMode.value === true) {
     return 0.25
   }
   else {
-    return 0.7
+    return 0.5
   }
 })
 
-function getRandomBgPhoto() {
-  getRandomWallpaper(1920).then((res)=>{
-    bgAddress.value = res.data.url
-  })
+async function getRandomBgPhoto() {
+  let res = await getRandomWallpaper(1920)
+  console.log(res.data.url)
+  document.getElementById("bg").style.backgroundImage = "url(" + res.data.url + ")"
 }
 
-getRandomWallpaper()
+getRandomBgPhoto()
 
 function applyFocusMode(status) {
   console.log("Received the trigger: ", status)
@@ -33,8 +36,19 @@ function applyFocusMode(status) {
 </script>
 
 <template>
-  <div class="bgContainer"/>
-  <top-bar @trigger-focus-status="applyFocusMode"/>
+  <divide-box v-if="displayWallpaperInfoDialog" @onClose="displayWallpaperInfoDialog = !displayWallpaperInfoDialog">
+    <template #title>壁纸</template>
+    <template #menu>
+      <menu-item>壁纸信息</menu-item>
+      <menu-item>在线壁纸偏好设置</menu-item>
+      <menu-item>自定义壁纸</menu-item>
+    </template>
+  </divide-box>
+  <div class="bgContainer" id="bg"/>
+  <top-bar
+      @trigger-focus-status="applyFocusMode"
+      @trigger-wallpaper-dialog="displayWallpaperInfoDialog = true"
+  />
   <div class="container">
     <MainClock :on-focus-mode="focusMode"/>
     <DCarousel class="flipPageContainer" :autoplay="false" v-if="focusMode === false">

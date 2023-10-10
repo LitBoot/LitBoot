@@ -1,13 +1,17 @@
 <script setup>
-import {SettingFilled} from '@ant-design/icons-vue'
+import {SettingFilled, CopyrightCircleOutlined} from '@ant-design/icons-vue'
 
-const emit = defineEmits(['triggerFocusStatus'])
+const emit = defineEmits(['triggerFocusStatus', 'triggerWallpaperDialog'])
 let focusStatus = false;
 
 function triggerOnFocus() {
   focusStatus = !focusStatus
   emit('triggerFocusStatus', focusStatus)
   console.log("Focus mode triggered!")
+}
+
+function triggerOpenWallpaperDialog() {
+  emit('triggerWallpaperDialog')
 }
 </script>
 
@@ -18,6 +22,9 @@ function triggerOnFocus() {
   </div>
   <div class="roundButton" @click="triggerOnFocus">
     <img src="../assets/Focus.svg" width="25"/>
+  </div>
+  <div class="roundButton" @click="triggerOpenWallpaperDialog">
+    <CopyrightCircleOutlined/>
   </div>
 </div>
 </template>

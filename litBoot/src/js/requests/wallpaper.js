@@ -5,7 +5,7 @@ export async function getRandomWallpaper(resolutionCode) {
         console.log("Sending request")
         axios({
             method: 'GET',
-            url: 'https://bing.biturl.top/?resolution=' + 1920 + '&format=json&index=0&mkt=zh-CN',
+            url: 'https://bing.biturl.top/?resolution=' + 1366 + '&format=json&index=0&mkt=zh-CN',
         }).then((resp)=>{
             console.log(resp)
             res(resp)
