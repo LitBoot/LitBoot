@@ -4,15 +4,69 @@ import {ref, computed} from "vue";
 import {returnGooglePattern, returnBaiduPattern, returnBingPattern} from '../js/searchEngine.js'
 
 const searchBarContent = ref("")
-const isShowResultList = computed(()=>{
-  return searchBarContent.value.length !== 0;
-})
+const isShowResultList = ref(false)
 const isShowQuickCalculate = computed(()=>{
   return searchBarContent.value.includes("计算")
 })
+const calculateResult = ref("")
+const emit = defineEmits(['onSearch', 'onEndSearch'])
+
+// smart engine support function
+// patterns
+const calculationPattern = new RegExp(/(\-|\+)?\d+(\.\d+)?[\+|\-|\*|\/](\-|\+)?\d+(\.\d+)?/g)
+const calculateSymbols = ["+", "-", "*", "/"]
+function smartSearch(content) {
+  // Quick Calculation
+  if (calculationPattern.exec(content).length >= 0) {
+    // means the target input fulfilled the calculation requirement, extract the numbers
+    let strNum1 = "", strNum2 = "", symbol="", isInputNum1 = true, result = calculationPattern.exec(content)
+    for (let i = 0; i < result[0].length; i++) {
+      if (isInputNum1) {
+        if (calculateSymbols.indexOf(result[0][i]) !== -1 && strNum1.length !== 0) {
+          // means calculation symbol was included, separate the two numbers
+          isInputNum1 = false
+          symbol = result[0][i]
+        }
+        else {
+          // append
+          strNum1 += result[0][i]
+        }
+      }
+      else {
+        // append to the second num
+        strNum2 += result[0][i]
+      }
+    }
+    // convert and do the calculation
+    if (symbol === "+") {
+      calculateResult.value = String(Number(strNum1) + Number(strNum2))
+    }
+    else if (symbol === "-") {
+      calculateResult.value = String(Number(strNum1) - Number(strNum2))
+    }
+    else if (symbol === "*") {
+      calculateResult.value = String(Number(strNum1) * Number(strNum2))
+    }
+    else if (symbol === "/") {
+      if (true) {}
+    }
+    else {
+      calculateResult.value = "未知的运算方法"
+    }
+  }
+}
 
 function openURL(url) {
   window.location.href = url
+}
+
+function triggerOnSearch() {
+  isShowResultList.value = true;
+  emit('onSearch')
+}
+
+function triggerOnEndSearch() {
+  emit('onEndSearch')
 }
 
 </script>
@@ -22,7 +76,10 @@ function openURL(url) {
   <div class="searchbarContentContainer" tabindex="1">
     <div class="searchbarInputHolder">
       <SearchOutlined style="flex: 1"/>
-      <input type="text" class="searchbarInput" placeholder="搜索任何东西" v-model="searchBarContent"/>
+      <input type="text" class="searchbarInput" placeholder="搜索任何东西" v-model="searchBarContent"
+             @focus="triggerOnSearch"
+             @blur="triggerOnEndSearch"
+      />
       <CloseCircleFilled @click="searchBarContent = ''"/>
     </div>
     <div class="searchbarResultListHolder" v-if="isShowResultList">

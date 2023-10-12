@@ -76,13 +76,17 @@ function handleOnClose() {
 .mainContentContainer {
   display: flex;
   flex-direction: column;
-  padding: 15px;
+  padding: 30px;
   width: 40%;
   height: 60%;
   border-top-right-radius: 7px;
   border-bottom-right-radius: 7px;
   background-color: rgb(31,30,30);
   color: white;
+  overflow-y: scroll;
+}
+.mainContentContainer::-webkit-scrollbar {
+  display: none;
 }
 .divideBoxTitle {
   color: white;
