@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96543c26-555a-4964-b43b-53482065cf74" name="Changes" comment="interface update">
-      <change afterPath="$PROJECT_DIR$/litBoot/src/UIComponent/normalItemBox.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/litBoot/src/processedComponent/wallpaperSetupDialog.vue" afterDir="false" />
+    <list default="true" id="96543c26-555a-4964-b43b-53482065cf74" name="Changes" comment="dialogupdate">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/litBoot/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/litBoot/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/litBoot/src/components/searchBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/litBoot/src/components/searchBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/litBoot/src/js/requests/wallpaper.js" beforeDir="false" afterPath="$PROJECT_DIR$/litBoot/src/js/requests/wallpaper.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +102,7 @@
       <workItem from="1696957847237" duration="1778000" />
       <workItem from="1696960183301" duration="612000" />
       <workItem from="1697043235451" duration="4109000" />
-      <workItem from="1697118660863" duration="2916000" />
+      <workItem from="1697118660863" duration="4126000" />
     </task>
     <task id="LOCAL-00001" summary="Init Commit">
       <option name="closed" value="true" />
@@ -147,7 +144,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697130194559</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="dialogupdate">
+      <option name="closed" value="true" />
+      <created>1697131708739</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1697131708739</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,7 +163,8 @@
     <MESSAGE value="Wallpaper request&#10;Focus mode update" />
     <MESSAGE value="divideBox Update" />
     <MESSAGE value="interface update" />
-    <option name="LAST_COMMIT_MESSAGE" value="interface update" />
+    <MESSAGE value="dialogupdate" />
+    <option name="LAST_COMMIT_MESSAGE" value="dialogupdate" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
