@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96543c26-555a-4964-b43b-53482065cf74" name="Changes" comment="divideBox Update">
-      <change afterPath="$PROJECT_DIR$/litBoot/src/UIComponent/staticListContent.vue" afterDir="false" />
+    <list default="true" id="96543c26-555a-4964-b43b-53482065cf74" name="Changes" comment="interface update">
+      <change afterPath="$PROJECT_DIR$/litBoot/src/UIComponent/normalItemBox.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/litBoot/src/processedComponent/wallpaperSetupDialog.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/litBoot/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/litBoot/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/litBoot/src/UIComponent/divideBox.vue" beforeDir="false" afterPath="$PROJECT_DIR$/litBoot/src/UIComponent/divideBox.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/litBoot/src/components/searchBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/litBoot/src/components/searchBar.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +105,7 @@
       <workItem from="1696957847237" duration="1778000" />
       <workItem from="1696960183301" duration="612000" />
       <workItem from="1697043235451" duration="4109000" />
-      <workItem from="1697118660863" duration="1516000" />
+      <workItem from="1697118660863" duration="2916000" />
     </task>
     <task id="LOCAL-00001" summary="Init Commit">
       <option name="closed" value="true" />
@@ -139,7 +139,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696949786452</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="interface update">
+      <option name="closed" value="true" />
+      <created>1697130194558</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1697130194559</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,7 +157,8 @@
     <MESSAGE value="Init Commit" />
     <MESSAGE value="Wallpaper request&#10;Focus mode update" />
     <MESSAGE value="divideBox Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="divideBox Update" />
+    <MESSAGE value="interface update" />
+    <option name="LAST_COMMIT_MESSAGE" value="interface update" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>

@@ -69,6 +69,11 @@ function triggerOnEndSearch() {
   emit('onEndSearch')
 }
 
+function clearSearchContent() {
+  searchBarContent.value = ""
+  isShowResultList.value = false
+}
+
 </script>
 
 <template>
@@ -80,7 +85,7 @@ function triggerOnEndSearch() {
              @focus="triggerOnSearch"
              @blur="triggerOnEndSearch"
       />
-      <CloseCircleFilled @click="searchBarContent = ''"/>
+      <CloseCircleFilled @click="clearSearchContent"/>
     </div>
     <div class="searchbarResultListHolder" v-if="isShowResultList">
       <div class="resultListItem" v-if="isShowQuickCalculate">计算结果：</div>
