@@ -54,6 +54,6 @@
 .ntbActions {
   display: flex;
   flex-direction: row;
-  flex: 3;
+  flex: auto;
 }
 </style>

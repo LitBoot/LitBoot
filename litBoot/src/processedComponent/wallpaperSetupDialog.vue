@@ -3,10 +3,38 @@ import MenuItem from "../UIComponent/menuItem.vue";
 import DivideBox from "../UIComponent/divideBox.vue";
 import NormalItemBox from "../UIComponent/normalItemBox.vue";
 import {ref} from "vue";
+import {supportedResolutions, getWallpaperRequestsInfo, defaultValues} from "../js/requests/wallpaper.js"
+import UButton from "../UIComponent/UButton.vue";
 
 const emits = defineEmits(['onDialogClose'])
 const props = defineProps(['wallpaperInfo'])
 const wallpaperInfoDialogTab = ref("info")
+const settingsInfo = ref({
+  resolution: getWallpaperRequestsInfo(defaultValues.resolutionKeyName).then((res)=>{
+    console.log("Get Current Resolution: ", res)
+    return res
+  }),
+  region: getWallpaperRequestsInfo(defaultValues.regionKeyName).then((res)=>{
+    console.log("Get current Region")
+    return res
+  }),
+  options: {
+    resolutionOptions: [
+      {
+        label: "低",
+        value: supportedResolutions.Fast
+      },
+      {
+        label: "中",
+        value: supportedResolutions.Normal
+      },
+      {
+        label: "高",
+        value: supportedResolutions.FourK
+      }
+    ]
+  },
+})
 
 function triggerOnDialogClose() {
   emits('onDialogClose')
@@ -30,12 +58,21 @@ function triggerOnDialogClose() {
           <template #title>图片版权信息</template>
           <template #description>{{props.wallpaperInfo.copyright}}</template>
           <template #action>
-            <a-button type="primary" :href="props.wallpaperInfo.copyright_link">前往版权信息页面</a-button>
+            <UButton @click="location.href = props.wallpaperInfo.copyright_link">前往版权信息页面</UButton>
+<!--            <a-button type="primary" :href="props.wallpaperInfo.copyright_link">前往版权信息页面</a-button>-->
           </template>
         </normal-item-box>
       </template>
       <template v-if="wallpaperInfoDialogTab === 'onlinePreference'">
         <h2>在线壁纸偏好设置</h2>
+        <div style="margin-bottom: 15px">修改在线壁纸推荐的偏好设置</div>
+        <normal-item-box>
+          <template #title>分辨率</template>
+          <template #description>调整壁纸的清晰度，更低的清晰度会有更快的加载速度，更高的清晰度在网速较慢时加载更慢</template>
+          <template #action>
+            <UButton>选择</UButton>
+          </template>
+        </normal-item-box>
       </template>
       <template v-if="wallpaperInfoDialogTab === 'offlinePreference'">
         <h2>自定义壁纸</h2>

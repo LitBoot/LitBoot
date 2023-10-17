@@ -16,7 +16,7 @@ export const supportedResolutions = {
     FourK: "3840"
 }
 
-const defaultValues = {
+export const defaultValues = {
     resolutionKeyName: "wallpaper:resolution",
     defaultResolution: supportedResolutions.Fast,
     regionKeyName: "wallpaper:region",
@@ -25,15 +25,15 @@ const defaultValues = {
 
 export async function getWallpaperRequestsInfo(key) {
     return new Promise((res)=>{
-        if (key === "resolution") {
-            if (localStorage.getItem(defaultValues.resolutionKeyName) === undefined) {
+        if (key === "wallpaper:resolution") {
+            if (localStorage.getItem(defaultValues.resolutionKeyName) === null) {
                 // set as the default value
                 localStorage.setItem(defaultValues.resolutionKeyName, defaultValues.defaultResolution)
             }
             res(localStorage.getItem(defaultValues.resolutionKeyName))
         }
-        else if (key === "region") {
-            if (localStorage.getItem(defaultValues.regionKeyName) === undefined) {
+        else if (key === "wallpaper:region") {
+            if (localStorage.getItem(defaultValues.regionKeyName) === null) {
                 // set as the default value
                 localStorage.setItem(defaultValues.regionKeyName, defaultValues.defaultRegion)
             }
@@ -47,7 +47,7 @@ export async function getWallpaperRequestsInfo(key) {
 
 export async function setWallpaperRequestsInfo(key, value) {
     return new Promise((res)=>{
-        if (localStorage.getItem("wallpaper:" + key) === undefined) {
+        if (localStorage.getItem("wallpaper:" + key) === null) {
             // means the target element does not exist, prevent user to allocate the localStorage
             res(false)
         }
@@ -61,6 +61,7 @@ export async function setWallpaperRequestsInfo(key, value) {
 export async function getRandomWallpaper(resolutionCode) {
     return new Promise(async (res)=>{
         let currentResolution = await getWallpaperRequestsInfo(defaultValues.resolutionKeyName)
+        console.log(currentResolution)
         let currentRegion = await getWallpaperRequestsInfo(defaultValues.regionKeyName)
         console.log("Sending request")
         axios({
