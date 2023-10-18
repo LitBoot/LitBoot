@@ -47,13 +47,13 @@ export async function getWallpaperRequestsInfo(key) {
 
 export async function setWallpaperRequestsInfo(key, value) {
     return new Promise((res)=>{
-        if (localStorage.getItem("wallpaper:" + key) === null) {
+        if (localStorage.getItem(key) === null) {
             // means the target element does not exist, prevent user to allocate the localStorage
             res(false)
         }
         else {
             // set the item
-            localStorage.setItem("wallpaper:" + key, value)
+            localStorage.setItem(key, value)
         }
     })
 }

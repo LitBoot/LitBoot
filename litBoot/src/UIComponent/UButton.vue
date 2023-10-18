@@ -12,6 +12,7 @@
 .uButtonContainer {
   margin: 5px;
   padding: 7px;
+  width: fit-content;
   background-color: rgba(255,255,255,0);
   color: white;
   cursor: pointer;
@@ -21,6 +22,11 @@
   border-width: 1px;
   border-color: white;
   border-style: solid;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
 }
 .uButtonContainer:hover {
   background-color: rgba(255,255,255,0.2);

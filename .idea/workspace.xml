@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96543c26-555a-4964-b43b-53482065cf74" name="Changes" comment="wallpaper optimize">
-      <change afterPath="$PROJECT_DIR$/litBoot/src/UIComponent/UButton.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/litBoot/src/UIComponent/optionSelector.vue" afterDir="false" />
+    <list default="true" id="96543c26-555a-4964-b43b-53482065cf74" name="Changes" comment="Interface Update">
+      <change afterPath="$PROJECT_DIR$/litBoot/src/UIComponent/optionController/optionSelector.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/litBoot/src/UIComponent/UButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/litBoot/src/UIComponent/UButton.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/litBoot/src/UIComponent/normalItemBox.vue" beforeDir="false" afterPath="$PROJECT_DIR$/litBoot/src/UIComponent/normalItemBox.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/litBoot/src/UIComponent/optionSelector.vue" beforeDir="false" afterPath="$PROJECT_DIR$/litBoot/src/UIComponent/optionController/optionSelectorItem.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/litBoot/src/js/requests/wallpaper.js" beforeDir="false" afterPath="$PROJECT_DIR$/litBoot/src/js/requests/wallpaper.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/litBoot/src/processedComponent/wallpaperSetupDialog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/litBoot/src/processedComponent/wallpaperSetupDialog.vue" afterDir="false" />
     </list>
@@ -70,6 +71,7 @@
       <recent name="C:\Users\ilove\Documents\Code\LitBoot\front\litBoot\litBoot\src\assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ilove\Documents\Code\LitBoot\front\litBoot\litBoot\src\UIComponent\optionController" />
       <recent name="C:\Users\ilove\Documents\Code\LitBoot\front\litBoot\litBoot\src\assets" />
     </key>
   </component>
@@ -112,7 +114,8 @@
       <workItem from="1697320641675" duration="1269000" />
       <workItem from="1697380241056" duration="10000" />
       <workItem from="1697552339880" duration="114000" />
-      <workItem from="1697569524433" duration="1736000" />
+      <workItem from="1697569524433" duration="1920000" />
+      <workItem from="1697636658385" duration="9473000" />
     </task>
     <task id="LOCAL-00001" summary="Init Commit">
       <option name="closed" value="true" />
@@ -170,7 +173,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697133173212</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Interface Update">
+      <option name="closed" value="true" />
+      <created>1697586440536</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1697586440536</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,7 +194,8 @@
     <MESSAGE value="interface update" />
     <MESSAGE value="dialogupdate" />
     <MESSAGE value="wallpaper optimize" />
-    <option name="LAST_COMMIT_MESSAGE" value="wallpaper optimize" />
+    <MESSAGE value="Interface Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Interface Update" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>

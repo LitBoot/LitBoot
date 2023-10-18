@@ -5,35 +5,36 @@ import NormalItemBox from "../UIComponent/normalItemBox.vue";
 import {ref} from "vue";
 import {supportedResolutions, getWallpaperRequestsInfo, defaultValues} from "../js/requests/wallpaper.js"
 import UButton from "../UIComponent/UButton.vue";
+import OptionSelector from "../UIComponent/optionController/optionSelector.vue";
 
 const emits = defineEmits(['onDialogClose'])
 const props = defineProps(['wallpaperInfo'])
 const wallpaperInfoDialogTab = ref("info")
 const settingsInfo = ref({
-  resolution: getWallpaperRequestsInfo(defaultValues.resolutionKeyName).then((res)=>{
-    console.log("Get Current Resolution: ", res)
-    return res
-  }),
-  region: getWallpaperRequestsInfo(defaultValues.regionKeyName).then((res)=>{
-    console.log("Get current Region")
-    return res
-  }),
+  resolution: "",
+  region: "",
   options: {
     resolutionOptions: [
       {
-        label: "低",
-        value: supportedResolutions.Fast
+        value: "低",
+        key: supportedResolutions.Fast
       },
       {
-        label: "中",
-        value: supportedResolutions.Normal
+        value: "中",
+        key: supportedResolutions.Normal
       },
       {
-        label: "高",
-        value: supportedResolutions.FourK
+        value: "高",
+        key: supportedResolutions.FourK
       }
     ]
   },
+})
+getWallpaperRequestsInfo(defaultValues.resolutionKeyName).then((res)=>{
+  settingsInfo.value.resolution = res
+})
+getWallpaperRequestsInfo(defaultValues.regionKeyName).then((res)=>{
+  settingsInfo.value.region = res
 })
 
 function triggerOnDialogClose() {
@@ -70,7 +71,7 @@ function triggerOnDialogClose() {
           <template #title>分辨率</template>
           <template #description>调整壁纸的清晰度，更低的清晰度会有更快的加载速度，更高的清晰度在网速较慢时加载更慢</template>
           <template #action>
-            <UButton>选择</UButton>
+            <option-selector :initial-value="settingsInfo.resolution" :options="settingsInfo.options.resolutionOptions" title="选择分辨率" description="选择一个合适的分辨率。越高的分辨率加载速度越慢，反之亦然。"/>
           </template>
         </normal-item-box>
       </template>
