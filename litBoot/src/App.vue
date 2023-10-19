@@ -22,7 +22,7 @@ const wallpaperInfoDialogTab = ref("info")
 
 const bgBrightness = computed(()=>{
   if (focusMode.value === true || searchMode.value === true) {
-    return 0.25
+    return 0.35
   }
   else {
     return 0.5

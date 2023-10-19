@@ -54,6 +54,7 @@ export async function setWallpaperRequestsInfo(key, value) {
         else {
             // set the item
             localStorage.setItem(key, value)
+            res(true)
         }
     })
 }

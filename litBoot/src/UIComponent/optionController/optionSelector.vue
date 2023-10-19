@@ -12,7 +12,7 @@ const explicitSelectedName = ref("选择一个值")
 const currentSelectedValue = ref("__unified__NotSelected")
 
 function handleOnSelect(targetName, targetValue) {
-  emits("onSelectionChange", targetValue)
+  emits("onSelectionChange", targetName, targetValue)
   showSelectionPanel.value = false
   explicitSelectedName.value = targetName
   emits("onClose")
