@@ -11,7 +11,7 @@ import {message} from "ant-design-vue";
 const emits = defineEmits(['onDialogClose'])
 const props = defineProps(['wallpaperInfo'])
 const wallpaperInfoDialogTab = ref("info")
-const isEnableDailyImage = ref(true)
+const isEnableDailyImage = ref(localStorage.getItem("wallpaper:enabled") === "true")
 const settingsInfo = ref({
   resolution: "",
   region: "",
@@ -92,6 +92,17 @@ function triggerSetRegion(targetKey, targetRegion) {
     }
   })
 }
+const ENABLE_ONLINE_WALLPAPER = "true";
+const DISABLE_ONLINE_WALLPAPER = "false";
+
+function triggerEnableOnlineWallpaper() {
+  if (localStorage.getItem("wallpaper:enabled") === null) {
+    localStorage.setItem("wallpaper:enabled", "true")
+  }
+  else {
+    localStorage.setItem("wallpaper:enabled", isEnableDailyImage.value.toString())
+  }
+}
 
 function triggerOnDialogClose() {
   emits('onDialogClose')
@@ -145,7 +156,7 @@ function triggerOnDialogClose() {
           <template #title>启用“必应每日壁纸”</template>
           <template #description>启用后，我们将会随机切换背景图片</template>
           <template #action>
-            <a-switch v-model:checked="isEnableDailyImage"/>
+            <a-switch @change="triggerEnableOnlineWallpaper()" v-model:checked="isEnableDailyImage"/>
           </template>
         </normal-item-box>
         <normal-item-box v-if="!isEnableDailyImage">

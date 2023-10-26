@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96543c26-555a-4964-b43b-53482065cf74" name="Changes" comment="UI Component Update">
+    <list default="true" id="96543c26-555a-4964-b43b-53482065cf74" name="Changes" comment="Wallpaper Dialog Update">
+      <change afterPath="$PROJECT_DIR$/litBoot/src/js/Config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/litBoot/src/js/Services/User.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/litBoot/src/js/requests/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/litBoot/src/processedComponent/loginTipBox.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/litBoot/src/processedComponent/settingsDialog.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/litBoot/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/litBoot/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/litBoot/src/UIComponent/optionController/optionSelector.vue" beforeDir="false" afterPath="$PROJECT_DIR$/litBoot/src/UIComponent/optionController/optionSelector.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/litBoot/src/UIComponent/UButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/litBoot/src/UIComponent/UButton.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/litBoot/src/components/topBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/litBoot/src/components/topBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/litBoot/src/js/requests/wallpaper.js" beforeDir="false" afterPath="$PROJECT_DIR$/litBoot/src/js/requests/wallpaper.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/litBoot/src/processedComponent/wallpaperSetupDialog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/litBoot/src/processedComponent/wallpaperSetupDialog.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -116,7 +120,10 @@
       <workItem from="1697569524433" duration="1920000" />
       <workItem from="1697636658385" duration="9473000" />
       <workItem from="1697673270107" duration="853000" />
-      <workItem from="1697743851545" duration="2962000" />
+      <workItem from="1697743851545" duration="3844000" />
+      <workItem from="1697773782358" duration="707000" />
+      <workItem from="1698262918805" duration="4469000" />
+      <workItem from="1698329540772" duration="4481000" />
     </task>
     <task id="LOCAL-00001" summary="Init Commit">
       <option name="closed" value="true" />
@@ -190,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697673385235</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Wallpaper Dialog Update">
+      <option name="closed" value="true" />
+      <created>1697747914720</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1697747914720</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,7 +220,8 @@
     <MESSAGE value="wallpaper optimize" />
     <MESSAGE value="Interface Update" />
     <MESSAGE value="UI Component Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="UI Component Update" />
+    <MESSAGE value="Wallpaper Dialog Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Wallpaper Dialog Update" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>

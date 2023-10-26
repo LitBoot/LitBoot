@@ -6,6 +6,7 @@ import TopBar from "./components/topBar.vue";
 import {computed, ref} from "vue";
 import {getRandomWallpaper} from "./js/requests/wallpaper.js"
 import WallpaperSetupDialog from "./processedComponent/wallpaperSetupDialog.vue";
+import SettingsDialog from "./processedComponent/settingsDialog.vue";
 
 const focusMode = ref(false)
 const searchMode = ref(false)
@@ -18,6 +19,7 @@ const wallpaperInfo = ref({
   copyright_link: ""
 })
 const displayWallpaperInfoDialog = ref(false)
+const displaySettingsDialog = ref(false)
 const wallpaperInfoDialogTab = ref("info")
 
 const bgBrightness = computed(()=>{
@@ -36,7 +38,15 @@ async function getRandomBgPhoto() {
   document.getElementById("bg").style.backgroundImage = "url(" + res.data.url + ")"
 }
 
-getRandomBgPhoto()
+if (localStorage.getItem("wallpaper:enabled") === null) {
+  localStorage.setItem("wallpaper:enabled", "true")
+}
+else if (localStorage.getItem("wallpaper:enabled") === "true") {
+  getRandomBgPhoto()
+}
+else {
+  console.log("Skipped online wallpaper process")
+}
 
 function applyFocusMode(status) {
   console.log("Received the trigger: ", status)
@@ -50,13 +60,18 @@ function applyFocusMode(status) {
   <top-bar
       @trigger-focus-status="applyFocusMode"
       @trigger-wallpaper-dialog="displayWallpaperInfoDialog = true"
+      @trigger-settings-dialog="displaySettingsDialog = true"
   />
   <wallpaper-setup-dialog :wallpaper-info="wallpaperInfo" v-if="displayWallpaperInfoDialog === true" @on-dialog-close="displayWallpaperInfoDialog = false"/>
+  <settings-dialog @onDialogClose="displaySettingsDialog = false" v-if="displaySettingsDialog">
+
+  </settings-dialog>
   <div class="container">
-    <MainClock :on-focus-mode="focusMode"/>
+    <MainClock v-if="focusMode" :on-focus-mode="focusMode"/>
     <DCarousel class="flipPageContainer" :autoplay="false" v-if="focusMode === false">
       <div class="carousel-item">
-        <search-bar @on-search="searchMode = true" @on-end-search="searchMode = false"/>
+        <MainClock v-if="!focusMode" :on-focus-mode="focusMode"/>
+        <search-bar style="margin-top: 5px" @on-search="searchMode = true" @on-end-search="searchMode = false"/>
       </div>
       <div class="carousel-item">
         <h2>收藏夹正在开发中！</h2>
@@ -99,5 +114,6 @@ function applyFocusMode(status) {
   width: 90%;
   flex: 7;
   overflow: hidden;
+  margin-top: 7%;
 }
 </style>
